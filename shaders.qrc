@@ -1,2 +1,9 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/">
+        <file>shaders/tex.frag</file>
+        <file>shaders/tex.vert</file>
+        <file>shaders/axis.vert</file>
+        <file>shaders/axis.geom</file>
+        <file>shaders/axis.frag</file>
+    </qresource>
+</RCC>

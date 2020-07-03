@@ -1,14 +1,11 @@
 #version 450
 
-layout(location = 0) in vec3 vertex_position;
-layout(location = 1) in float vertex_color;
+layout(location = 0) in vec2 vertex_position;
 
 uniform mat4 matrix;
 
-out float color;
-
 void main()
 {
-	color = vertex_color;
-	gl_Position = vec4(vertex_position, 1.0);
+        gl_Position = matrix*vec4(vertex_position, 0.0f, 1.0f);
+        gl_PointSize = 5.0f;
 }

@@ -1,12 +1,12 @@
 #version 450
 
-in float col;
-uniform sampler1D cat_texture;
 out vec4 frag_color;
 
 void main()
 {
-	float colorI = float(col/11.0f);
-	vec4 tex_col = texture (cat_texture, colorI);
-	frag_color = tex_col;//vec4 (color_out, 1.0);
+    vec2 coord = gl_PointCoord - vec2(0.5);  //from [0,1] to [-0.5,0.5]
+    if(length(coord) > 0.7075)                  //outside of circle radius?
+        discard;
+
+    frag_color = vec4 (1.0f, 0.0f, 0.0f, 1.0);
 }
